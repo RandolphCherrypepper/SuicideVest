@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Buttons -->
+  <WearableExplosives_Label>Detonate</WearableExplosives_Label>
+  <WearableExplosives_Desc>Detonate this pawn's suicide vest.</WearableExplosives_Desc>
+
+</LanguageData>

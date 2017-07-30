@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+  <ThingDef ParentName="ArmorMakeableBase">
+    <defName>Apparel_SuicideVest</defName>
+    <label>suicide vest</label>
+    <description>A vest lined with explosives. Handle carefully.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+        <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Apparel/SuicideVestPlate/SuicideVestPlate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Never</tickerType>
+    <statBases>
+      <WorkToMake>10400</WorkToMake>
+      <MaxHitPoints>10</MaxHitPoints>
+      <Mass>4</Mass>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <comps>
+      <li Class="Randolph_Cherrypepper.CompProperties_WearableExplosive">
+        <explosiveRadius>2.8</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <stability>0.7</stability>
+      </li>
+    </comps>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.08</MoveSpeed>
+    </equippedStatOffsets>
+    <costList>
+      <Steel>65</Steel>
+      <Component>2</Component>
+      <Chemfuel>10</Chemfuel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <worngraphicPath>Apparel/SuicideVestPlate/SuicideVestPlate</worngraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>WearableExplosive</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>RemoveFromAnything</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>1</weight>
+          <min>RGBA(0.65,0.25,0.25,1)</min>
+          <max>RGBA(0.8,0.5,0.5,1)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</ThingDefs>
