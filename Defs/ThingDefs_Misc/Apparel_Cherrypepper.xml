@@ -5,6 +5,13 @@
     <defName>Apparel_SuicideVest</defName>
     <label>suicide vest</label>
     <description>A vest lined with explosives. Handle carefully.</description>
+    <modExtensions>
+      <li Class="Randolph_Cherrypepper.DangerousApparelTags">
+        <tags>
+          <li>Military</li>
+        </tags>
+      </li>
+    </modExtensions>
     <techLevel>Industrial</techLevel>
     <recipeMaker>
         <researchPrerequisite>ComplexClothing</researchPrerequisite>
