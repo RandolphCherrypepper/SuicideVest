@@ -21,6 +21,11 @@
       <texPath>Apparel/SuicideVestPlate/SuicideVestPlate</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <projectile>
+        <explosionRadius>4.7</explosionRadius>
+        <damageDef>Bomb</damageDef>
+        <damageAmountBase>120</damageAmountBase>
+    </projectile>
     <tickerType>Never</tickerType>
     <statBases>
       <WorkToMake>10400</WorkToMake>
@@ -34,8 +39,6 @@
     </thingCategories>
     <comps>
       <li Class="Randolph_Cherrypepper.CompProperties_WearableExplosive">
-        <explosiveRadius>2.8</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
         <stability>0.7</stability>
       </li>
     </comps>
@@ -45,7 +48,7 @@
     <costList>
       <Steel>65</Steel>
       <Component>2</Component>
-      <Chemfuel>10</Chemfuel>
+      <Chemfuel>120</Chemfuel>
     </costList>
     <apparel>
       <bodyPartGroups>

@@ -9,19 +9,21 @@ namespace Randolph_Cherrypepper
     public class CompProperties_WearableExplosive : CompProperties
     {
 
-        public float explosiveRadius = 1.9f;
+        /* Scales how likely this will explode when it takes damage.
+         *   stability = MaxHitPoints cannot detonate until full destruction (0 hitpoints)
+         *   stability = 2 cannot detonate until it has lost at least half its HP
+         *   stability = 0.5 means there's at least 50/50 chance of exploding on the first hit
+         *   stability = 0 could lead to an explosion without taking any damage in theory (but not in practice)
+         */
+        public float stability = 1.1f;
 
-        public DamageDef explosiveDamageType;
-
-        public ThingDef postExplosionSpawnThingDef;
+        // The following are properties defined for the Bomb DamageDef but not ProjectileProperties
 
         public float postExplosionSpawnChance;
 
         public int postExplosionSpawnThingCount = 1;
 
         public bool applyDamageToExplosionCellsNeighbors = true;
-
-        public ThingDef preExplosionSpawnThingDef;
 
         public float preExplosionSpawnChance;
 
@@ -30,14 +32,6 @@ namespace Randolph_Cherrypepper
         public float explosiveExpandPerStackcount;
 
         public EffecterDef explosionEffect;
-
-        /* Scales how likely this will explode when it takes damage.
-         *   stability = MaxHitPoints cannot detonate until full destruction (0 hitpoints)
-         *   stability = 2 cannot detonate until it has lost at least half its HP
-         *   stability = 0.5 means there's at least 50/50 chance of exploding on the first hit
-         *   stability = 0 could lead to an explosion without taking any damage in theory (but not in practice)
-         */
-        public float stability = 1.1f;
 
         public CompProperties_WearableExplosive()
         {
@@ -121,9 +115,16 @@ namespace Randolph_Cherrypepper
             }
 
             var props = Props;
+            var proj = parent.def.projectile;
+
+            if (proj == null)
+            {
+                Log.Error("ThingDef with CompWearable is missing Projectile tag set. Cannot detonate.");
+                return;
+            }
 
             //Expand radius for stackcount
-            float radius = props.explosiveRadius;
+            float radius = proj.explosionRadius;
             if (!IsWorn && parent.stackCount > 1 && props.explosiveExpandPerStackcount > 0)
                 radius += Mathf.Sqrt((parent.stackCount - 1) * props.explosiveExpandPerStackcount);
 
@@ -134,18 +135,22 @@ namespace Randolph_Cherrypepper
                 effect.Cleanup();
             }
 
-            GenExplosion.DoExplosion(loc,
+            GenExplosion.DoExplosion
+            (
+                loc,
                 map,
                 radius,
-                props.explosiveDamageType,
+                proj.damageDef,
                 parent,
-                postExplosionSpawnThingDef: props.postExplosionSpawnThingDef,
+                projectile: parent.def,
+                postExplosionSpawnThingDef: proj.postExplosionSpawnThingDef,
                 postExplosionSpawnChance: props.postExplosionSpawnChance,
                 postExplosionSpawnThingCount: props.postExplosionSpawnThingCount,
                 applyDamageToExplosionCellsNeighbors: props.applyDamageToExplosionCellsNeighbors,
-                preExplosionSpawnThingDef: props.preExplosionSpawnThingDef,
+                preExplosionSpawnThingDef: proj.preExplosionSpawnThingDef,
                 preExplosionSpawnChance: props.preExplosionSpawnChance,
-                preExplosionSpawnThingCount: props.preExplosionSpawnThingCount);
+                preExplosionSpawnThingCount: props.preExplosionSpawnThingCount
+            );
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosWorn()

@@ -40,18 +40,18 @@ namespace Randolph_Cherrypepper
         {
             base.WriteSettings();
             // After writing the settings, immediately react to some of the changes made.
-            if (LoadedModManager.GetMod<ModWearableExplosive>().GetSettings<ModWearableExplosiveSettings>().SpawnWithRaids)
+
+            // Search all ThingDefs for apparel with the WearableExplosive tag.
+            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
             {
-                // Activate Spawn with Raids.
-                // Search all ThingDefs for apparel with the WearableExplosive tag.
-                foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
+                if (def != null && def.apparel != null && def.apparel.tags != null && def.apparel.tags.Contains("WearableExplosive"))
                 {
-                    if (def != null && def.apparel != null && def.apparel.tags != null && def.apparel.tags.Contains("WearableExplosive"))
+                    // Activate Spawn with Raids.
+                    if (LoadedModManager.GetMod<ModWearableExplosive>().GetSettings<ModWearableExplosiveSettings>().SpawnWithRaids)
                     {
                         // Apply tags specified in DangerousApparelTags to the apparel tags
                         if (def.GetModExtension<DangerousApparelTags>() != null)
                         {
-                            Log.Message("Adding Raids to explosive: " + def.defName);
                             foreach (string tag in def.GetModExtension<DangerousApparelTags>().Tags)
                             {
                                 if (!def.apparel.tags.Contains(tag))
@@ -59,31 +59,22 @@ namespace Randolph_Cherrypepper
                             }
                         }
                     }
-                }
-            }
-            else
-            {
-                // Deactivate Spawn with Raids.
-                // Search all ThingDefs for apparel with the WearableExplosive tag.
-                foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
-                {
-                    if (def != null && def.apparel != null && def.apparel.tags != null && def.apparel.tags.Contains("WearableExplosive"))
+                    // Deactivate Spawn with Raids.
+                    else
                     {
                         // Remove tags specified in DangerousApparelTags to the apparel tags
                         if (def.GetModExtension<DangerousApparelTags>() != null)
                         {
-                            Log.Message("Removing Raids to explosive: " + def.defName);
                             foreach (string tag in def.GetModExtension<DangerousApparelTags>().Tags)
                             {
                                 if (def.apparel.tags.Contains(tag))
                                     def.apparel.tags.Remove(tag);
                             }
                         }
-                    }
-                }
-            }
+                    } // check and update raids
+                } // valid WearableExplosive
+            } // search thingdefs
         }
-
     }
 
     public class ModWearableExplosiveSettings : ModSettings
