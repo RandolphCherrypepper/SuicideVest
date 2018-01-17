@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
   <ThingDef ParentName="ArmorMakeableBase">
     <defName>Apparel_SuicideVest</defName>
@@ -54,7 +54,7 @@
       <bodyPartGroups>
         <li>Torso</li>
       </bodyPartGroups>
-      <worngraphicPath>Apparel/SuicideVestPlate/SuicideVestPlate</worngraphicPath>
+      <wornGraphicPath>Apparel/SuicideVestPlate/SuicideVestPlate</wornGraphicPath>
       <layers>
         <li>Middle</li>
       </layers>
@@ -76,4 +76,4 @@
     </colorGenerator>
   </ThingDef>
 
-</ThingDefs>
+</Defs>

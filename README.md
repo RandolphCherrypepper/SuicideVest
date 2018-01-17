@@ -16,7 +16,7 @@ Mod Order: Anywhere below AGFC.
 Feel free to leave a comment if you run into a problem.
 
 Steam Download:
-http://steamcommunity.com/sharedfiles/filedetails/?id=1095588770
+http://steamcommunity.com/sharedfiles/filedetails/?id=1272186441
 
 GitHub Download:
 https://github.com/RandolphCherrypepper/SuicideVest/releases/
