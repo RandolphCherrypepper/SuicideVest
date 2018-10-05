@@ -68,7 +68,7 @@ namespace Randolph_Cherrypepper
         {
             absorbed = false;
 
-            if (dinfo.Def.externalViolence)
+            if (dinfo.Def.ExternalViolenceFor(parent))
             {
                 if (dinfo.Amount >= parent.HitPoints)
                 {

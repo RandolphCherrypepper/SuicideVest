@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="ArmorMakeableBase">
+  <ThingDef ParentName="ArmorMachineableBase">
     <defName>Apparel_SuicideVest</defName>
     <label>suicide vest</label>
     <description>A vest lined with explosives. Handle carefully.</description>
@@ -14,8 +14,11 @@
     </modExtensions>
     <techLevel>Industrial</techLevel>
     <recipeMaker>
-        <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
     </recipeMaker>
     <graphicData>
       <texPath>Apparel/SuicideVestPlate/SuicideVestPlate</texPath>
@@ -31,8 +34,11 @@
       <WorkToMake>10400</WorkToMake>
       <MaxHitPoints>10</MaxHitPoints>
       <Mass>4</Mass>
-      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.00</ArmorRating_Heat>
+      <Insulation_Cold>1</Insulation_Cold>
+      <EquipDelay>6</EquipDelay>
     </statBases>
     <thingCategories>
       <li>Apparel</li>
@@ -47,7 +53,7 @@
     </equippedStatOffsets>
     <costList>
       <Steel>65</Steel>
-      <Component>2</Component>
+      <ComponentIndustrial>2</ComponentIndustrial>
       <Chemfuel>120</Chemfuel>
     </costList>
     <apparel>
