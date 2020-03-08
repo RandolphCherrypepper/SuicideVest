@@ -1,13 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 
-    <name>Suicide Vest [V1]</name>
+    <name>Suicide Vest [V1,V1.1]</name>
 
     <author>Randolph Cherrypepper</author>
 
-    <url>http://steamcommunity.com/id/randolphcherrypepper/myworkshopfiles/</url>
+    <supportedVersions>
+        <li>1.0</li>
+        <li>1.1</li>       
+    </supportedVersions>
 
-    <targetVersion>1.0.0</targetVersion>
+    <packageId>randolphcherrypepper.suicidevest</packageId>
+
+    <url>https://steamcommunity.com/sharedfiles/filedetails/?id=1272186441</url>
+
+    <modDependencies>
+        <li>
+            <packageId>randolphcherrypepper.apparelgizmosfromcomps</packageId>
+            <displayName>Apparel Gizmos From Comps</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/1272185463</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+
+    <loadAfter>
+        <li>randolphcherrypepper.apparelgizmosfromcomps</li>
+        <li>randolphcherrypepper.removefromanything</li>
+    </loadAfter>
 
 <description>
 Need to put some of those incapable colonists to good use? Is your human leather hat collection overflowing?
