@@ -8,7 +8,7 @@
     <modExtensions>
       <li Class="Randolph_Cherrypepper.DangerousApparelTags">
         <tags>
-          <li>Military</li>
+          <li>IndustrialMilitaryBasic</li>
         </tags>
       </li>
     </modExtensions>
@@ -25,9 +25,9 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-        <explosionRadius>4.7</explosionRadius>
+        <explosionRadius>5.8</explosionRadius>
         <damageDef>Bomb</damageDef>
-        <damageAmountBase>120</damageAmountBase>
+        <damageAmountBase>100</damageAmountBase>
     </projectile>
     <tickerType>Never</tickerType>
     <statBases>
@@ -49,16 +49,19 @@
       </li>
     </comps>
     <equippedStatOffsets>
-      <MoveSpeed>-0.08</MoveSpeed>
+      <MoveSpeed>-0.12</MoveSpeed>
     </equippedStatOffsets>
     <costList>
-      <Steel>65</Steel>
+      <Cloth>10</Cloth>
+      <Steel>70</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
-      <Chemfuel>120</Chemfuel>
+      <Chemfuel>40</Chemfuel>
     </costList>
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
       </bodyPartGroups>
       <wornGraphicPath>Apparel/SuicideVestPlate/SuicideVestPlate</wornGraphicPath>
       <layers>
