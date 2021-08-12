@@ -6,6 +6,19 @@ using Verse;
 namespace Randolph_Cherrypepper
 {
 
+    public class DangerousApparelProjectile : DefModExtension
+    {
+        protected ProjectileProperties projectile;
+
+        public ProjectileProperties Projectile
+        {
+            get
+            {
+                return projectile;
+            }
+        }
+    }
+
     public class CompProperties_WearableExplosive : CompProperties
     {
 
@@ -115,7 +128,7 @@ namespace Randolph_Cherrypepper
             }
 
             var props = Props;
-            var proj = parent.def.projectile;
+            var proj = parent.def.GetModExtension<DangerousApparelProjectile>().Projectile;
 
             if (proj == null)
             {

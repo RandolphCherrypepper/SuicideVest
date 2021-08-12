@@ -11,6 +11,13 @@
           <li>IndustrialMilitaryBasic</li>
         </tags>
       </li>
+      <li Class="Randolph_Cherrypepper.DangerousApparelProjectile">
+        <projectile>
+          <explosionRadius>5.8</explosionRadius>
+          <damageDef>Bomb</damageDef>
+          <damageAmountBase>100</damageAmountBase>
+        </projectile>
+      </li>
     </modExtensions>
     <techLevel>Industrial</techLevel>
     <recipeMaker>
@@ -24,11 +31,6 @@
       <texPath>Apparel/SuicideVestPlate/SuicideVestPlate</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
-        <explosionRadius>5.8</explosionRadius>
-        <damageDef>Bomb</damageDef>
-        <damageAmountBase>100</damageAmountBase>
-    </projectile>
     <tickerType>Never</tickerType>
     <statBases>
       <WorkToMake>10400</WorkToMake>
@@ -41,7 +43,7 @@
       <EquipDelay>6</EquipDelay>
     </statBases>
     <thingCategories>
-      <li>Apparel</li>
+      <li>ApparelArmor</li>
     </thingCategories>
     <comps>
       <li Class="Randolph_Cherrypepper.CompProperties_WearableExplosive">
