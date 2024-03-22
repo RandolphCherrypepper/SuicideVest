@@ -77,7 +77,7 @@ namespace Randolph_Cherrypepper
         protected virtual bool IsWorn => (GetWearer != null);
 
         // heavily based on Rimworld.CompExplosive.PostPreApplyDamage()
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             absorbed = false;
 
