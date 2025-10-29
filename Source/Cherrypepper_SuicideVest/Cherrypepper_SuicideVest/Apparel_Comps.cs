@@ -121,11 +121,13 @@ namespace Randolph_Cherrypepper
                 Log.Warning("Tried to detonate CompWearableExplosive in a null map.");
                 return;
             }
+	    /* not nullable value-type now, apparently
             if (loc == null)
             {
                 Log.Warning("Tried to detonate CompWearableExplosive at a null position.");
                 return;
             }
+	    */
 
             var props = Props;
             var proj = parent.def.GetModExtension<DangerousApparelProjectile>().Projectile;
